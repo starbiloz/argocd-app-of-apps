@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  description: 
+    namespace: argo-app-2
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: myApp/app-2
+    repoURL: https://github.com/starbiloz/argocd-app-of-apps.git
+    targetRevision: HEAD
+    

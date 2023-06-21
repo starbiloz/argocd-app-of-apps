@@ -27,3 +27,9 @@ spec:
             cpu: "100m"
         ports:
         - containerPort: 80
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
